@@ -80,3 +80,39 @@ resets.
 
 The Tap-Hold tab has four checkboxes and only two want ticking: Permissive Hold
 and Chordal Hold on, Hold On Other Key Press and Retro Tapping off.
+
+## Thumb taps
+
+Each thumb key has two slots, a hold and a tap. The four layer thumbs use only
+the hold; the two inner thumbs use only the tap. Filling the empty slots is
+where the remaining room on this board is.
+
+**The inner thumbs stay plain.** Space and Backspace are ordinary keycodes so
+that holding them repeats. A mod-tap cannot repeat: Quick Tap Term is 0, which
+is the same setting that stops `fffff` on the home row, and it is global — per
+key control needs `get_quick_tap_term()` in firmware. Holding Backspace to
+delete a run is worth more than any modifier that key could carry.
+
+**The layer thumbs can take taps, with one caveat.** Chordal Hold applies to
+layer-taps too, so if a thumb inherits its half's handedness, `LT()` refuses
+same-hand keys and resolves as a tap instead. What that costs depends on where
+the layer's keys live:
+
+| Tap on | That layer's keys | Survives handedness |
+|---|---|---|
+| **NUM** (left outer) | entirely right hand | **yes, always** |
+| NAV (left middle) | arrows right, `Q W E R` left | partly |
+| FUN (right outer) | both hands | partly |
+| SYM (right middle) | both hands | no — right-hand symbols break |
+
+`LT(4, KC_TAB)` is therefore safe whatever the firmware does: NUM lives wholly
+on the right hand, so holding it is always a cross-hand chord.
+
+To settle the rest, set the right outer thumb to `LSFT_T(KC_ENT)` in Vial, then
+hold it and tap `a` (expect `A`), then hold it and tap `j`. A capital `J` means
+thumbs are exempt and all four taps are available. A newline means handedness
+is enforced, and only the rows above marked yes or partly are.
+
+`apply_vil.py` cannot encode `LT()` — the board has never reported one, so the
+number is unverified. It refuses with a message pointing at Vial rather than
+guessing. Load the `.vil` through Vial, then `--learn` on the Linux box.

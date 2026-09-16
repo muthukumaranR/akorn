@@ -33,6 +33,7 @@ Columns: `c0` outer pinky, `c1` pinky, `c2` ring, `c3` middle, `c4` index,
  Ctrl   Z     X     C     V     B   |                     |   N     M     ,     .     /    Enter
 
                           NUM   NAV   Bksp       Space   SYM   FUN
+                          Tab                                        <- tap
                          outer   mid   inner      inner   mid  outer
 ```
 
@@ -44,6 +45,10 @@ mod-taps. See [behavior.md](behavior.md#escape-hatch).
 
 Reachable without holding anything:
 `` ` `` `[` `]` `\` `'` `;` `,` `.` `/` `Esc` `Tab` `Enter` `Bksp` `Del` `Space`
+
+> **Thumb taps:** the left outer thumb is `LT(4, KC_TAB)` — hold for NUM, tap
+> for Tab. The other three layer thumbs are pure holds for now; see
+> [behavior.md](behavior.md#thumb-taps) for why.
 
 > **Thumbs:** Space is the **right** inner thumb, Backspace the **left** —
 > swapped from the stock Corne arrangement so Space lands under the thumb that

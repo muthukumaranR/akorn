@@ -35,7 +35,7 @@ BASE_L = {
     # - and = still live on SYM+F and SYM+J
     "C": ["KC_LSFT", "LGUI_T(KC_A)", "LALT_T(KC_S)", "LCTL_T(KC_D)", "LSFT_T(KC_F)", "KC_G", "KC_MS_BTN3"],
     "D": ["KC_LCTL", "KC_Z", "KC_X", "KC_C", "KC_V", "KC_B"],
-    "T": ["MO(4)", "MO(2)", "KC_BSPC"],   # inner thumb: Bksp (was Space)
+    "T": ["LT(4,KC_TAB)", "MO(2)", "KC_BSPC"],  # outer: hold NUM / tap Tab. inner: Bksp
 }
 BASE_R = {
     "A": ["KC_BSLS", "KC_6", "KC_7", "KC_8", "KC_9", "KC_0", "KC_BSPC"],
