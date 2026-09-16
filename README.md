@@ -38,17 +38,20 @@ Home-row mods chord **across hands** — left-hand modifier, right-hand key.
 Chordal Hold enforces it in firmware. The outer-column `Shift` and `Ctrl` are
 plain modifiers and ignore that rule, which is the escape hatch.
 
-## Setup on the Linux host
+## Setup
 
-The tooling expects to live at `~/keyboard`:
+**Any OS:** open Vial, File → Load Saved Layout → `keyboard/corne-ergo.vil`,
+then set the QMK Settings listed in
+[`docs/behavior.md`](docs/behavior.md#tap-hold-settings). The board stores the
+keymap itself, so that is all it takes.
+
+**Linux, for the scripts and the lighting.** They expect to live at
+`~/keyboard`:
 
 ```
 git clone git@github.com:muthukumaranR/akorn.git ~/src/akorn
 ln -s ~/src/akorn/keyboard ~/keyboard
 ```
-
-Then Vial → File → Load Saved Layout → `corne-ergo.vil`, and set the QMK
-Settings listed in [`docs/behavior.md`](docs/behavior.md#tap-hold-settings).
 
 ## Repo map
 

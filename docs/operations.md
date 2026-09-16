@@ -1,7 +1,29 @@
 # Operations
 
-Everything runs from the `keyboard/` directory on the Linux host. Standard
-library only, no root.
+## Where each thing runs
+
+The board stores its own keymap, so the Vial GUI can drive it from any OS. The
+scripts cannot: both bind `/dev/hidraw*` and `/sys/class/hidraw/`, so they are
+Linux-only.
+
+| Task | Linux | macOS |
+|---|---|---|
+| Load `corne-ergo.vil` onto the board | Vial GUI, or `apply_vil.py --write` | **Vial GUI** |
+| Edit a key or two by hand | Vial GUI | **Vial GUI** |
+| Change QMK Settings (tapping term, Chordal Hold) | Vial GUI | **Vial GUI** |
+| Diff board against file, write only what changed | `apply_vil.py` | no |
+| Catch keycodes that silently became `KC_NO` | `apply_vil.py --verify` | no |
+| Layer-aware lighting | `rgbd.py` | no |
+
+So a change made on the Mac is real and persistent — it lives in the board's
+EEPROM and travels with it. What you give up there is the diff, the `KC_NO`
+check, and the LEDs. After any Vial GUI load, run `apply_vil.py --verify` the
+next time you are at the Linux box.
+
+Nothing here reflashes firmware. `apply_vil.py` writes the Vial/VIA **dynamic
+keymap** over raw HID; the QMK build on the board is untouched.
+
+The scripts need only the standard library, and no root.
 
 ## Files
 
