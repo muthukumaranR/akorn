@@ -122,6 +122,16 @@ throw errors. The daemon now watches for the Vial GUI and releases the device
 entirely while it is open, then reconnects and re-reads the keymap when Vial
 closes, so edits land in the lighting for free.
 
+## Tests
+
+```
+python3 -m unittest discover -s tests
+```
+
+`tests/test_keycodes.py` checks the keycode composition rules against the
+numbers in `keycodes.json`, which were read off the board. If a rule ever
+disagrees with one of those, the rule is wrong.
+
 ## Troubleshooting
 
 | Symptom | Fix |

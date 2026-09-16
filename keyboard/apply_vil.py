@@ -169,32 +169,46 @@ MODBITS = {"LCTL": 0x01, "LSFT": 0x02, "LALT": 0x04, "LGUI": 0x08,
            "LCS": 0x03, "LCA": 0x05, "LSA": 0x06, "MEH": 0x07,
            "LSG": 0x0A, "LAG": 0x0C, "LCAG": 0x0D, "HYPR": 0x0F}
 
+# A mod-tap is the same, plus the tap-hold range bit.
+QK_MOD_TAP = 0x2000
+
+
+def compose(name, table):
+    """Number for a composed keycode name, ignoring any direct entry for it.
+
+    Two shapes, both verified against values read off this board:
+      modifier wrapper  LCTL(KC_LEFT)   -> (mod << 8) | inner
+      mod-tap           LGUI_T(KC_A)    -> QK_MOD_TAP | (mod << 8) | inner
+
+    Layer-taps LT(n, kc) are deliberately absent: the board has never reported
+    one, so the encoding is unverified here. Set one in Vial, run --learn, and
+    it arrives in keycodes.json as a plain entry.
+    """
+    m = re.fullmatch(r"([A-Z]+)(_T)?\((.+)\)", name)
+    if not m or m.group(1) not in MODBITS:
+        return None
+    inner = resolve(m.group(3), table)
+    if inner is None or inner > 0xFF:
+        return None
+    code = (MODBITS[m.group(1)] << 8) | inner
+    return (QK_MOD_TAP | code) if m.group(2) else code
+
 
 def resolve(name, table):
     """Number for a keycode name: straight from the learned table, or composed
-    for a modifier wrapper whose inner keycode the table already knows."""
+    for a wrapper or mod-tap whose inner keycode the table already knows."""
     if name in table:
         return table[name]
-    m = re.fullmatch(r"([A-Z]+)\((.+)\)", name)
-    if m and m.group(1) in MODBITS:
-        inner = resolve(m.group(2), table)
-        if inner is not None and inner <= 0xFF:
-            return (MODBITS[m.group(1)] << 8) | inner
-    return None
+    return compose(name, table)
 
 
 def check_resolver(table):
-    """Prove the composition rule against every wrapped name already observed."""
+    """Prove the composition rules against every composed name already observed."""
     for name, code in table.items():
-        m = re.fullmatch(r"([A-Z]+)\((.+)\)", name)
-        if not m or m.group(1) not in MODBITS:
-            continue
-        got = resolve(m.group(2), table)
-        if got is None:
-            continue
-        if (MODBITS[m.group(1)] << 8) | got != code:
-            raise SystemExit(f"modifier rule disagrees with the board on {name}: "
-                             f"computed 0x{(MODBITS[m.group(1)] << 8) | got:04X}, board has 0x{code:04X}")
+        got = compose(name, table)
+        if got is not None and got != code:
+            raise SystemExit(f"composition rule disagrees with the board on {name}: "
+                             f"computed 0x{got:04X}, board has 0x{code:04X}")
 
 
 def learn_codes(live, want):
