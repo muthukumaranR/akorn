@@ -14,8 +14,13 @@ settings are tunable over the wire, so the normal loop never leaves userspace.
 | Understand why a chord misfired | [`docs/behavior.md`](docs/behavior.md) |
 | Change the layout, or fix the lighting | [`docs/operations.md`](docs/operations.md) |
 
-Visual reference (rendered, clickable):
-<https://claude.ai/code/artifact/34fdc244-9b67-4be9-a69b-d23635e9f4e2>
+Interactive reference — pick a layer, or just type and the board follows:
+<https://claude.ai/artifact/SYVLcd56Qw2yRW53JY6Yxv>
+
+Generated from `gen_vil.py`, so it cannot disagree with the firmware. It
+replaces the earlier hand-built reference, which was missing F2–F4, F7–F9, the
+RGB controls on FUN's top row, `FUN+K` mute, the NUM thumb row, and the macOS
+Cmd swap.
 
 ## The shape of it
 
