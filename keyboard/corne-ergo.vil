@@ -44,7 +44,7 @@
     "KC_NO",
     "KC_NO",
     "LT(4,KC_TAB)",
-    "MO(2)",
+    "LT(2,KC_ESC)",
     "KC_BSPC",
     "KC_NO"
    ],
@@ -88,7 +88,7 @@
     "KC_NO",
     "KC_SPC",
     "MO(3)",
-    "MO(5)",
+    "LT(5,KC_ENT)",
     "KC_NO",
     "KC_NO",
     "KC_NO"
@@ -136,7 +136,7 @@
     "KC_NO",
     "KC_NO",
     "LT(4,KC_TAB)",
-    "MO(2)",
+    "LT(2,KC_ESC)",
     "KC_BSPC",
     "KC_NO"
    ],
@@ -180,7 +180,7 @@
     "KC_NO",
     "KC_SPC",
     "MO(3)",
-    "MO(5)",
+    "LT(5,KC_ENT)",
     "KC_NO",
     "KC_NO",
     "KC_NO"

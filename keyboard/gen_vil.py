@@ -35,14 +35,14 @@ BASE_L = {
     # - and = still live on SYM+F and SYM+J
     "C": ["KC_LSFT", "LGUI_T(KC_A)", "LALT_T(KC_S)", "LCTL_T(KC_D)", "LSFT_T(KC_F)", "KC_G", "KC_MS_BTN3"],
     "D": ["KC_LCTL", "KC_Z", "KC_X", "KC_C", "KC_V", "KC_B"],
-    "T": ["LT(4,KC_TAB)", "MO(2)", "KC_BSPC"],  # outer: hold NUM / tap Tab. inner: Bksp
+    "T": ["LT(4,KC_TAB)", "LT(2,KC_ESC)", "KC_BSPC"],  # hold NUM/NAV, tap Tab/Esc. inner: Bksp
 }
 BASE_R = {
     "A": ["KC_BSLS", "KC_6", "KC_7", "KC_8", "KC_9", "KC_0", "KC_BSPC"],
     "B": ["KC_RBRC", "KC_Y", "KC_U", "KC_I", "KC_O", "KC_P", "KC_DEL"],
     "C": ["KC_MS_BTN1", "KC_H", "RSFT_T(KC_J)", "RCTL_T(KC_K)", "LALT_T(KC_L)", "RGUI_T(KC_SCLN)", "KC_QUOT"],
     "D": ["KC_N", "KC_M", "KC_COMM", "KC_DOT", "KC_SLSH", "KC_ENT"],
-    "T": ["KC_SPC", "MO(3)", "MO(5)"],    # inner thumb: Space (was Bksp)
+    "T": ["KC_SPC", "MO(3)", "LT(5,KC_ENT)"],  # inner: Space. outer: hold FUN / tap Enter
 }
 
 # ---------------------------------------------------------------- layer 1: base (macOS)
