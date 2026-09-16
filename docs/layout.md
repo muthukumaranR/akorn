@@ -32,7 +32,7 @@ Columns: `c0` outer pinky, `c1` pinky, `c2` ring, `c3` middle, `c4` index,
         gui   alt   ctl   sft                                       sft   ctl   alt   gui
  Ctrl   Z     X     C     V     B   |                     |   N     M     ,     .     /    Enter
 
-                          NUM   NAV   Space       Bksp   SYM   FUN
+                          NUM   NAV   Bksp       Space   SYM   FUN
                          outer   mid   inner      inner   mid  outer
 ```
 
@@ -44,6 +44,11 @@ mod-taps. See [behavior.md](behavior.md#escape-hatch).
 
 Reachable without holding anything:
 `` ` `` `[` `]` `\` `'` `;` `,` `.` `/` `Esc` `Tab` `Enter` `Bksp` `Del` `Space`
+
+> **Thumbs:** Space is the **right** inner thumb, Backspace the **left** —
+> swapped from the stock Corne arrangement so Space lands under the thumb that
+> already spaced on a row-staggered board. Backspace also stays in its
+> traditional spot at the top-right outer column.
 
 ## Layer 1 — Base (macOS)
 
@@ -110,7 +115,7 @@ hand types.
 | `H` | `/` | `/` | `=` |
 | `J` `K` `L` | 4 5 6 | `P` | `-` |
 | `;` | `+` | | |
-| Bksp thumb | `0` | SYM thumb | `.` |
+| right inner thumb (Space) | `0` | SYM thumb | `.` |
 | FUN thumb | Enter | `A` `S` `D` `F` | plain GUI / Alt / Ctrl / Shift |
 
 ## Layer 5 — FUN (hold right outer thumb, or NAV + SYM)

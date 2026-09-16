@@ -35,14 +35,14 @@ BASE_L = {
     # - and = still live on SYM+F and SYM+J
     "C": ["KC_LSFT", "LGUI_T(KC_A)", "LALT_T(KC_S)", "LCTL_T(KC_D)", "LSFT_T(KC_F)", "KC_G", "KC_MS_BTN3"],
     "D": ["KC_LCTL", "KC_Z", "KC_X", "KC_C", "KC_V", "KC_B"],
-    "T": ["MO(4)", "MO(2)", "KC_SPC"],
+    "T": ["MO(4)", "MO(2)", "KC_BSPC"],   # inner thumb: Bksp (was Space)
 }
 BASE_R = {
     "A": ["KC_BSLS", "KC_6", "KC_7", "KC_8", "KC_9", "KC_0", "KC_BSPC"],
     "B": ["KC_RBRC", "KC_Y", "KC_U", "KC_I", "KC_O", "KC_P", "KC_DEL"],
     "C": ["KC_MS_BTN1", "KC_H", "RSFT_T(KC_J)", "RCTL_T(KC_K)", "LALT_T(KC_L)", "RGUI_T(KC_SCLN)", "KC_QUOT"],
     "D": ["KC_N", "KC_M", "KC_COMM", "KC_DOT", "KC_SLSH", "KC_ENT"],
-    "T": ["KC_BSPC", "MO(3)", "MO(5)"],
+    "T": ["KC_SPC", "MO(3)", "MO(5)"],    # inner thumb: Space (was Bksp)
 }
 
 # ---------------------------------------------------------------- layer 1: base (macOS)

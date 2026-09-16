@@ -45,7 +45,7 @@
     "KC_NO",
     "MO(4)",
     "MO(2)",
-    "KC_SPC",
+    "KC_BSPC",
     "KC_NO"
    ],
    [
@@ -86,7 +86,7 @@
    ],
    [
     "KC_NO",
-    "KC_BSPC",
+    "KC_SPC",
     "MO(3)",
     "MO(5)",
     "KC_NO",
@@ -137,7 +137,7 @@
     "KC_NO",
     "MO(4)",
     "MO(2)",
-    "KC_SPC",
+    "KC_BSPC",
     "KC_NO"
    ],
    [
@@ -178,7 +178,7 @@
    ],
    [
     "KC_NO",
-    "KC_BSPC",
+    "KC_SPC",
     "MO(3)",
     "MO(5)",
     "KC_NO",

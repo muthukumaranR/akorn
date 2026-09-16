@@ -31,7 +31,7 @@ Cmd swap.
         gui   alt   ctl   sft                                       sft   ctl   alt   gui
  Ctrl   Z     X     C     V     B   |                     |   N     M     ,     .     /    Enter
 
-                          NUM   NAV   Space       Bksp   SYM   FUN
+                          NUM   NAV   Bksp       Space   SYM   FUN
 ```
 
 Home-row mods chord **across hands** — left-hand modifier, right-hand key.
