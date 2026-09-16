@@ -1,0 +1,13 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Daemon runtime state, written next to rgbd.py
+.rgbd-state.json
+
+# Scratch dumps pulled off the board
+*.bak
+dump-*.vil
+
+# Agent worklog
+.claude/
